@@ -5,6 +5,15 @@ const { SharpApiCoreService, SharpApiJobTypeEnum } = require('@sharpapi/sharpapi
  */
 class SharpApiRelatedJobPositionsService extends SharpApiCoreService {
   /**
+   * Creates a new SharpApiRelatedJobPositionsService instance
+   * @param {string} apiKey - Your SharpAPI API key
+   * @param {string} [apiBaseUrl='https://sharpapi.com/api/v1'] - API base URL
+   */
+  constructor(apiKey, apiBaseUrl = 'https://sharpapi.com/api/v1') {
+    super(apiKey, apiBaseUrl, '@sharpapi/sharpapi-node-related-job-positions/1.0.1');
+  }
+
+  /**
    * Generates a list of related job positions with their weights as float value (1.0-10.0)
    * where 10 equals 100%, the highest relevance score.
    *
